@@ -20,9 +20,10 @@ app.get("/api/supply", async (req, res) => {
       const { circulatingSupply, realCirculatingSupply, decimals } = response.data;
   
       // Convertir los valores si es necesario (decimales)
-      const circulating = circulatingSupply / Math.pow(10, decimals);
-      const total = realCirculatingSupply / Math.pow(10, decimals);
-  
+      // const circulating = circulatingSupply / Math.pow(10, decimals);
+      // const total = realCirculatingSupply / Math.pow(10, decimals);
+      const circulating = circulatingSupply
+      const total = realCirculatingSupply
       // Crear la respuesta JSON
       const supplyData = {
         circulatingSupply: circulating,
@@ -47,7 +48,8 @@ app.get("/api/supply/circulating", async (req, res) => {
 
     const response = await axios.get(apiUrl);
     const { circulatingSupply, decimals } = response.data;
-    const circulating = circulatingSupply / Math.pow(10, decimals);
+    // const circulating = circulatingSupply / Math.pow(10, decimals);
+    const circulating = circulatingSupply;
 
     res.send(circulating.toString()); // Devolver solo el valor
   } catch (error) {
@@ -64,7 +66,8 @@ app.get("/api/supply/total", async (req, res) => {
 
     const response = await axios.get(apiUrl);
     const { realCirculatingSupply, decimals } = response.data;
-    const total = realCirculatingSupply / Math.pow(10, decimals);
+    // const total = realCirculatingSupply / Math.pow(10, decimals);
+    const total = realCirculatingSupply;
 
     res.send(total.toString()); // Devolver solo el valor
   } catch (error) {
