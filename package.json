@@ -1,8 +1,20 @@
 {
+    "name": "solana-supply-api",
+    "version": "1.0.0",
+    "description": "API para obtener datos de suministro de un token en Solana",
+    "main": "server.js",
+    "scripts": {
+      "start": "node index.js",
+      "vercel-build": "npm install"
+    },
     "dependencies": {
       "axios": "^1.7.9",
       "express": "^4.21.2"
-    }
-}
-  
+    },
+    "engines": {
+      "node": ">=14.x"
+    },
+    "author": "",
+    "license": "MIT"
+  }
   
